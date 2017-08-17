@@ -86,10 +86,10 @@ export class DynamicFormComponent implements OnInit, DoCheck {
   ngDoCheck() {
   }
 }
-/*
-TODO
-Check two fields not should have same name
-On select radio button on dropdown emit value
-Apply styles dynamically for submit button.
-Apply pipes and directived dynamically.
-*/
+// /*
+// TODO
+// Check two fields not should have same name
+// On select radio button on dropdown emit value
+// Apply styles dynamically for submit button.
+// Apply pipes and directived dynamically.
+// */
