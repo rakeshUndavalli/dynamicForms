@@ -4,6 +4,12 @@
     #form="dynamicForm"
     (submit)="submit($event)">
   </dynamic-form>
-  {{ form.valid }}
-  {{ form.value | json }}
+  <div class="row">
+    <div class="col-md-offset-5">
+      <span class="lead">
+        {{ form.valid }}
+        {{ form.value | json }}
+      </span>
+    </div>
+  </div>
 </div>

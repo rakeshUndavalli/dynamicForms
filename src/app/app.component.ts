@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
   nameErrorMesg = 'nameError';
-  lnameErrorMesg;
+  lnameErrorMesg = 'Last name not allowed';
   phoneNumber = 'phone';
   forbiddenUsernames = ['Chris', 'Anna'];
   // forbiddenLastNames = ['Chris','Anna']
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       type: 'input',
       label: 'Full name',
       name: 'name',
+      class:'form-control',
       placeholder: 'Enter your name',
       validation: [Validators.required, this.forbiddenNames.bind(this)],
       errorMessage: this.nameErrorMesg
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       type: 'input',
       label: 'Last name',
       name: 'last_Name',
+      class:'form-control',
       placeholder: 'Enter your last name',
       validation: [Validators.required],
       asyncValidation: [this.forbiddenLastName],
@@ -43,6 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       type: 'input',
       label: 'Phone Number',
       name: 'phone',
+      class:'form-control',
       placeholder: 'Enter your Phone Number',
       validation: [Validators.required, Validators.minLength(3)],
       errorMessage: this.phoneNumber
@@ -50,7 +53,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     {
       label: 'Submit',
       name: 'submit',
-      type: 'button'
+      type: 'button',
+      class:'btn btn-primary',
     }
   ];
 
@@ -98,7 +102,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           } else {
             resolve(null);
           }
-        },2500);
+        },1500);
     });
     return promise;
   }

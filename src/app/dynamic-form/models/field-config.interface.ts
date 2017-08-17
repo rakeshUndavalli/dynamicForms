@@ -5,6 +5,7 @@ export interface FieldConfig {
   label?: string;
   name: string;
   options?: string[];
+  class?:string;
   placeholder?: string;
   type: string;
   validation?: ValidatorFn[];

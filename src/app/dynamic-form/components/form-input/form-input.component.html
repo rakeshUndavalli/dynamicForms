@@ -6,7 +6,7 @@
         type="text"
         [attr.placeholder]="config.placeholder"
         [formControlName]="config.name"
-        class="form-control"
+        [ngClass]="config.class"
         [id]="id" 
         [name]="name" 
         [class.validation-error]="validationError"
@@ -20,4 +20,5 @@
         (focus)="onFocus()"
         >
     </div>
-    <p *ngIf="!group.get(config.name).valid && group.get(config.name).touched">{{config.errorMessage}}</p>
+    <p *ngIf="group.get(config.name).invalid && group.get(config.name).touched">{{config.errorMessage}}</p>
+    

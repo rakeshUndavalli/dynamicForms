@@ -10,7 +10,8 @@ import { FieldConfig } from '../../models/field-config.interface';
   template: `
     <div class="dynamic-field form-button"
       [formGroup]="group">
-      <button class="btn btn-primary"
+      <button
+        [ngClass]="config.class"
         [disabled]="config.disabled"
         type="submit">
         {{ config.label }}
