@@ -1,0 +1,23 @@
+ <div 
+      class="dynamic-field form-input" 
+      [formGroup]="group">
+      <label>{{ config.label }}</label>
+      <input
+        type="text"
+        [attr.placeholder]="config.placeholder"
+        [formControlName]="config.name"
+        class="form-control"
+        [id]="id" 
+        [name]="name" 
+        [class.validation-error]="validationError"
+        [class.input-tooltip]="inputTooltip"
+        [tabIndex]="tabindex" 
+        [attr.aria-label]="ariaLabel"
+        [attr.aria-labelledby]="ariaLabelledby"
+        [(ngModel)]="value"
+        [pattern]="pattern"
+        (blur)="onBlur()"
+        (focus)="onFocus()"
+        >
+    </div>
+    <p *ngIf="!group.get(config.name).valid && group.get(config.name).touched">{{config.errorMessage}}</p>
